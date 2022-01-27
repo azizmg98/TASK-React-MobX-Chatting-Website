@@ -1,51 +1,50 @@
-# Chatting website
 
 ## First things first:
-1. fork [this repo](https://github.com/JoinCODED/Task-react-MobX/)
-2. clone 
+1. Fork [this repo](https://github.com/JoinCODED/Task-react-MobX/)
+2. Clone 
 4. `npm install`
 5. `npm start`
 
 ## Instructions
 1. `npm install mobx mobx-react`
 2. Create a file called roomStore in src
-3. define the room class and inside create an empty array rooms =[]
+3. Define the room class and inside create an empty array rooms =[]
 4. `import { makeObservable, observable, action } from "mobx";`
-5. make a constructor that will make this a store 
-6. create a store and export it
+5. Make a constructor that will make this a store 
+6. Create a store and export it
 
 
 ## Fetch rooms :
-7. move fetchRooms function to the store and modify it (remove setRooms)
-8. add fetchRoom as an action in the constructor 
-9. in the list component :
+7. Move fetchRooms function to the store and modify it (remove setRooms)
+8. Add fetchRoom as an action in the constructor 
+9. In the list component :
     1. `import roomStore from "../roomStore";`
     2. `import { observer } from "mobx-react";`
-    3. add useEffect to call fetchRooms
-    4.  add observer before component export if it needs too 
+    3. Add useEffect to call fetchRooms
+    4. Add observer before component export if it needs too 
 
 ## Create a room:
-1. move createRoom function to the store 
-2. add createRoom as an action in the constructor 
-9. in the create room component :
+1. Move createRoom function to the store 
+2. Add createRoom as an action in the constructor 
+9. In the create room component :
     1. `import roomStore from "../roomStore";`
     2. `import { observer } from "mobx-react";`
-    3. call createRoom in the correct place (instead of the old one)
-    4.  add observer before component export if it needs too 
+    3. Call createRoom in the correct place (instead of the old one)
+    4. Add observer before component export if it needs too 
 
 
 ## Delete a room :
-1. move deleteRoom function to the store 
-2. add deleteRoom as an action in the constructor 
-9. in the room component :
+1. Move deleteRoom function to the store 
+2. Add deleteRoom as an action in the constructor 
+9. In the room component :
     1. `import roomStore from "../roomStore";`
     2. `import { observer } from "mobx-react";`
-    3. call deleteRoom in the correct place (instead of the old one)
-    4.  add observer before component export if it needs too 
+    3. Call deleteRoom in the correct place (instead of the old one)
+    4. Add observer before component export if it needs too 
 
 
 ## Clean up:
-dont forget to clean up the code in App.js and remove room state as you no longer need it !
+Don't forget to clean up the code in App.js and remove room state as you no longer need it!
 
 ### Challenge
 ## Update , Create a msg:
