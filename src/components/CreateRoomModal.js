@@ -1,7 +1,7 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 
-export default function CreateRoomModal(props) {
+export default function CreateRoomModal({createRoom,closeModal,isOpen}) {
   const [room, setRoom] = useState({
     title: "",
     image: "",
@@ -13,11 +13,11 @@ export default function CreateRoomModal(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.createRoom(room);
-    props.closeModal(); // this is to close the modal that is shown
+    createRoom(room);
+    closeModal(); // this is to close the modal that is shown
   };
   return (
-    <Modal centered show={props.isOpen} onHide={props.closeModal}>
+    <Modal centered show={isOpen} onHide={closeModal}>
       <Modal.Header closeButton>
         <Modal.Title>Create a room</Modal.Title>
       </Modal.Header>
