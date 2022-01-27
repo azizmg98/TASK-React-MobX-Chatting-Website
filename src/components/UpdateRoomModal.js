@@ -9,7 +9,7 @@ export default function UpdateRoomModal({room,isOpen,closeModal,updateRoom}) {
     description: room.description,
   });
   const handleChange = (event) => {
-    setRoomForm({ ...room, [event.target.name]: event.target.value });
+    setRoomForm({ ...roomForm, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
