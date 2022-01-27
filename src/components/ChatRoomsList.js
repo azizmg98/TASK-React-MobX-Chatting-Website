@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import ChatRoomitem from "./ChatRoomitem";
 import CreateRoomModal from "./CreateRoomModal";
 
-function ChatRoomsList(props) {
+function ChatRoomsList({rooms,deleteRoom,updateRoom,createRoom}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
 
   const openModal = () => setIsOpen(true);
 
-  const roomsList = props.rooms.map((room) => {
+  const roomsList = rooms.map((room) => {
     return (
       <ChatRoomitem
         room={room}
         key={room.id}
-        deleteRoom={props.deleteRoom}
-        updateRoom={props.updateRoom}
+        deleteRoom={deleteRoom}
+        updateRoom={updateRoom}
       />
     );
   });
@@ -27,7 +27,7 @@ function ChatRoomsList(props) {
         <CreateRoomModal
           isOpen={isOpen}
           closeModal={closeModal}
-          createRoom={props.createRoom}
+          createRoom={createRoom}
         />
       </button>
       <center>
