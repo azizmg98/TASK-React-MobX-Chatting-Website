@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-import ChatRoomitem from "./ChatRoomitem";
+import ChatRoomItem from "./ChatRoomItem";
 import CreateRoomModal from "./CreateRoomModal";
 
-function ChatRoomsList({rooms,deleteRoom,updateRoom,createRoom}) {
+const ChatRoomsList = ({ rooms, deleteRoom, updateRoom, createRoom }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
 
   const openModal = () => setIsOpen(true);
 
-  const roomsList = rooms.map((room) => {
-    return (
-      <ChatRoomitem
-        room={room}
-        key={room.id}
-        deleteRoom={deleteRoom}
-        updateRoom={updateRoom}
-      />
-    );
-  });
+  const roomsList = rooms.map((room) => (
+    <ChatRoomItem
+      room={room}
+      key={room.id}
+      deleteRoom={deleteRoom}
+      updateRoom={updateRoom}
+    />
+  ));
+
   return (
     <div className="main__chatlist">
       <button className="btn">
@@ -39,5 +38,5 @@ function ChatRoomsList({rooms,deleteRoom,updateRoom,createRoom}) {
       <div className="chatlist__items">{roomsList}</div>
     </div>
   );
-}
+};
 export default ChatRoomsList;

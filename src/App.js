@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import ChatRoom from "./components/ChatRoom";
 import ChatRoomsList from "./components/ChatRoomsList";
-import { Route, Switch } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 
-function App() {
+const App = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
@@ -83,24 +83,28 @@ function App() {
   return (
     <div className="__main">
       <div className="main__chatbody">
-        <Switch>
-          <Route path="/room/:roomSlug">
-            <ChatRoom rooms={rooms} createMsg={createMsg} />
-          </Route>
-          <Route exact path="/">
-            <center>
-              <ChatRoomsList
-                rooms={rooms}
-                createRoom={createRoom}
-                deleteRoom={deleteRoom}
-                updateRoom={updateRoom}
-              />
-            </center>
-          </Route>
-        </Switch>
+        <center>
+          <Routes>
+            <Route
+              path="/room/:roomSlug"
+              element={<ChatRoom rooms={rooms} createMsg={createMsg} />}
+            />
+            <Route
+              path="/"
+              element={
+                <ChatRoomsList
+                  rooms={rooms}
+                  createRoom={createRoom}
+                  deleteRoom={deleteRoom}
+                  updateRoom={updateRoom}
+                />
+              }
+            />
+          </Routes>
+        </center>
       </div>
     </div>
   );
-}
+};
 
 export default App;

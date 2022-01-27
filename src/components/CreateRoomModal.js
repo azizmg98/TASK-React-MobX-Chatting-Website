@@ -1,7 +1,7 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 
-export default function CreateRoomModal({createRoom,closeModal,isOpen}) {
+const CreateRoomModal = ({ createRoom, closeModal, isOpen }) => {
   const [room, setRoom] = useState({
     title: "",
     image: "",
@@ -50,4 +50,6 @@ export default function CreateRoomModal({createRoom,closeModal,isOpen}) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
+
+export default CreateRoomModal;

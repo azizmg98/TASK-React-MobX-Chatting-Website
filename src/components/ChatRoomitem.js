@@ -3,17 +3,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import UpdateRoomModal from "./UpdateRoomModal";
 
-export default function ChatRoomitem({room,deleteRoom,updateRoom}) {
-  const room = room;
+const ChatRoomItem = ({ room, deleteRoom, updateRoom }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
 
   const handleDelete = () => {
     deleteRoom(room.id);
   };
+
   return (
     <div className="group">
       <Link to={`/room/${room.slug}`}>
@@ -44,4 +42,6 @@ export default function ChatRoomitem({room,deleteRoom,updateRoom}) {
       />
     </div>
   );
-}
+};
+
+export default ChatRoomItem;

@@ -1,7 +1,7 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 
-export default function UpdateRoomModal({room,isOpen,closeModal,updateRoom}) {
+const UpdateRoomModal = ({ room, isOpen, closeModal, updateRoom }) => {
   const [roomForm, setRoomForm] = useState({
     id: room.id,
     title: room.title,
@@ -61,4 +61,5 @@ export default function UpdateRoomModal({room,isOpen,closeModal,updateRoom}) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
+export default UpdateRoomModal;

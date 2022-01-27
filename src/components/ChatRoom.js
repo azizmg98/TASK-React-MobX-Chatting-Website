@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import MessageItem from "./MessageItem";
 
-function ChatRoom({rooms,createMsg}) {
+const ChatRoom = ({ rooms, createMsg }) => {
   const roomSlug = useParams().roomSlug;
   const room = rooms.find((room) => room.slug === roomSlug);
   const messagesList = room.messages.map((msg) => {
@@ -51,5 +51,5 @@ function ChatRoom({rooms,createMsg}) {
       </div>
     </div>
   );
-}
+};
 export default ChatRoom;

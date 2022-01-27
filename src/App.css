@@ -148,6 +148,7 @@ a {
   justify-items: baseline;
 }
 .chatlist__item {
+  text-align: left;
   background-color: white;
   width: 500px;
   display: flex;
