@@ -1,23 +1,23 @@
 import { Modal, Button, InputGroup, Form } from "react-bootstrap";
 import React, { useState } from "react";
 
-export default function UpdateRoomModal(props) {
-  const [room, setRoom] = useState({
-    id: props.room.id,
-    title: props.room.title,
-    image: props.room.image,
-    description: props.room.description,
+export default function UpdateRoomModal({room,isOpen,closeModal,updateRoom}) {
+  const [roomForm, setRoomForm] = useState({
+    id: room.id,
+    title: room.title,
+    image: room.image,
+    description: room.description,
   });
   const handleChange = (event) => {
-    setRoom({ ...room, [event.target.name]: event.target.value });
+    setRoomForm({ ...room, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.updateRoom(room);
-    props.closeModal();
+    updateRoom(room);
+    closeModal();
   };
   return (
-    <Modal centered show={props.isOpen} onHide={props.closeModal}>
+    <Modal centered show={isOpen} onHide={closeModal}>
       <Modal.Header closeButton>
         <Modal.Title>Update a room</Modal.Title>
       </Modal.Header>
@@ -26,7 +26,7 @@ export default function UpdateRoomModal(props) {
           <InputGroup>
             <InputGroup.Text>Title</InputGroup.Text>
             <Form.Control
-              value={room.title}
+              value={roomForm.title}
               type="text"
               name="title"
               onChange={handleChange}
@@ -36,7 +36,7 @@ export default function UpdateRoomModal(props) {
           <InputGroup>
             <InputGroup.Text>Image</InputGroup.Text>
             <Form.Control
-              value={room.image}
+              value={roomForm.image}
               type="text"
               name="image"
               onChange={handleChange}
@@ -49,7 +49,7 @@ export default function UpdateRoomModal(props) {
               type="text"
               name="description"
               onChange={handleChange}
-              value={room.description}
+              value={roomForm.description}
             />
           </InputGroup>
         </Form>
