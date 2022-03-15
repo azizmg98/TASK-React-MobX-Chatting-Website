@@ -11,7 +11,6 @@ class RoomStore {
       createRoom: action,
       deleteRoom: action,
       updateRoom: action,
-
     });
   }
   fetchRooms = async () => {
@@ -49,7 +48,7 @@ class RoomStore {
     }
   };
 
-     updateRoom = async (updatedRoom) => {
+  updateRoom = async (updatedRoom) => {
     try {
       const response = await axios.put(
         `https://coded-task-axios-be.herokuapp.com/rooms/${updatedRoom.id}`,
@@ -58,29 +57,29 @@ class RoomStore {
       let tempRooms = this.rooms.map((room) =>
         room.id === updatedRoom.id ? response.data : room
       );
-      this.rooms = tempRooms
+      this.rooms = tempRooms;
     } catch (error) {
       console.error(error);
     }
   };
 
-  //  createMsg = async (roomId, msg) => {
-  //   try {
-  //     const response = await axios.post(
-  //       `https://coded-task-axios-be.herokuapp.com/rooms/msg/${roomId}`,
-  //       msg
-  //     );
-  //     let tempRooms = rooms.map((room) =>
-  //       room.id === roomId
-  //         ? { ...room, messages: [...room.messages, response.data] }
-  //         : room
-  //     );
-  //     console.log(tempRooms);
-  //     setRooms(tempRooms);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  createMsg = async (roomId, msg) => {
+    try {
+      const response = await axios.post(
+        `https://coded-task-axios-be.herokuapp.com/rooms/msg/${roomId}`,
+        msg
+      );
+      let tempRooms = this.rooms.map((room) =>
+        room.id === roomId
+          ? { ...room, messages: [...room.messages, response.data] }
+          : room
+      );
+      console.log(tempRooms);
+      this.rooms = tempRooms;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 }
 
 const roomStore = new RoomStore();

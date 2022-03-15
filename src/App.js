@@ -3,25 +3,30 @@ import "./App.css";
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import ChatRoomsList from "./components/ChatRoomsList";
-// import chatRoom from './components/ChatRoom'
+import ChatRoom from './components/ChatRoom'
 import roomStore from "./roomStore";
+import { observer } from "mobx-react";
 
 const App = () => {
+
   // can we call use effect in the store?
   useEffect(() => {
     roomStore.fetchRooms();
   }, []);
+
+  // moved from ChatRoomList since we're also gonna use it in ChatRoom
+  const rooms = roomStore.rooms
 
   return (
     <div className="__main">
       <div className="main__chatbody">
         <center>
           <Routes>
-            {/* <Route
+            <Route
               path="/room/:roomSlug"
-              element={<ChatRoom rooms={rooms} createMsg={createMsg} />}
-            /> */}
-            <Route path="/" element={<ChatRoomsList />} />
+              element={<ChatRoom rooms={rooms}/>}
+            />
+            <Route path="/" element={<ChatRoomsList rooms={rooms} />} />
           </Routes>
         </center>
       </div>
@@ -29,4 +34,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default observer(App);
