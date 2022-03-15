@@ -4,7 +4,7 @@ import CreateRoomModal from "./CreateRoomModal";
 import roomStore from "../roomStore";
 import { observer } from "mobx-react";
 
-const ChatRoomsList = ({ updateRoom }) => {
+const ChatRoomsList = () => {
   // modal handling
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);

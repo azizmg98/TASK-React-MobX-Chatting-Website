@@ -59,7 +59,6 @@ class RoomStore {
         room.id === updatedRoom.id ? response.data : room
       );
       this.rooms = tempRooms
-      console.log(tempRooms)
     } catch (error) {
       console.error(error);
     }

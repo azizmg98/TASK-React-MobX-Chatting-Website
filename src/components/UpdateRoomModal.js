@@ -14,7 +14,7 @@ const UpdateRoomModal = ({ room, isOpen, closeModal }) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    roomStore.updateRoom(room);
+    roomStore.updateRoom(roomForm);
     closeModal();
   };
   return (

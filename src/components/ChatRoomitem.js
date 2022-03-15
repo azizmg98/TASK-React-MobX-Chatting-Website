@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import UpdateRoomModal from "./UpdateRoomModal";
 import roomStore from "../roomStore";
 
-const ChatRoomItem = ({ room, updateRoom }) => {
+const ChatRoomItem = ({ room }) => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
@@ -35,12 +35,7 @@ const ChatRoomItem = ({ room, updateRoom }) => {
       <Button className="delete" onClick={openModal}>
         Update
       </Button>
-      <UpdateRoomModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        room={room}
-        updateRoom={updateRoom}
-      />
+      <UpdateRoomModal isOpen={isOpen} closeModal={closeModal} room={room} />
     </div>
   );
 };
