@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import ChatRoomItem from "./ChatRoomItem";
 import CreateRoomModal from "./CreateRoomModal";
+import roomStore from "../roomStore";
+import { observer } from "mobx-react";
 
-const ChatRoomsList = ({ rooms, deleteRoom, updateRoom, createRoom }) => {
+const ChatRoomsList = ({ updateRoom }) => {
+  // modal handling
   const [isOpen, setIsOpen] = useState(false);
-
   const closeModal = () => setIsOpen(false);
-
   const openModal = () => setIsOpen(true);
 
+
+  // assigning store room to room
+  const rooms = roomStore.rooms
   const roomsList = rooms.map((room) => (
     <ChatRoomItem
       room={room}
       key={room.id}
-      deleteRoom={deleteRoom}
-      updateRoom={updateRoom}
     />
   ));
 
@@ -26,7 +28,6 @@ const ChatRoomsList = ({ rooms, deleteRoom, updateRoom, createRoom }) => {
         <CreateRoomModal
           isOpen={isOpen}
           closeModal={closeModal}
-          createRoom={createRoom}
         />
       </button>
       <center>
@@ -39,4 +40,4 @@ const ChatRoomsList = ({ rooms, deleteRoom, updateRoom, createRoom }) => {
     </div>
   );
 };
-export default ChatRoomsList;
+export default observer(ChatRoomsList);

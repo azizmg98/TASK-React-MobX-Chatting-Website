@@ -4939,19 +4939,6 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
-"fsevents@^1.2.7":
-  "integrity" "sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-1.2.13.tgz"
-  "version" "1.2.13"
-  dependencies:
-    "bindings" "^1.5.0"
-    "nan" "^2.12.1"
-
-"fsevents@~2.1.2", "fsevents@2.1.2":
-  "integrity" "sha512-R4wDiBwZ0KzpgOWetKDug1FZcYhqYnUYKtfZYt4mD5SBz76q0KR4Q9o7GIPamsVPGmW3EYPPJ0dOOjvx32ldZA=="
-  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.1.2.tgz"
-  "version" "2.1.2"
-
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -7036,22 +7023,22 @@
   dependencies:
     "minimist" "^1.2.5"
 
-"mobx-react-lite@^3.2.0":
-  "integrity" "sha512-7exWp1FV0M9dP08H9PIeHlJqDw4IdkQVRMfLYaZFMmlbzSS6ZU6p/kx392KN+rVf81hH3IQYewvRGQ70oiwmbw=="
-  "resolved" "https://registry.npmjs.org/mobx-react-lite/-/mobx-react-lite-3.2.3.tgz"
-  "version" "3.2.3"
+"mobx-react-lite@^3.3.0":
+  "integrity" "sha512-U/kMSFtV/bNVgY01FuiGWpRkaQVHozBq5CEBZltFvPt4FcV111hEWkgwqVg9GPPZSEuEdV438PEz8mk8mKpYlA=="
+  "resolved" "https://registry.npmjs.org/mobx-react-lite/-/mobx-react-lite-3.3.0.tgz"
+  "version" "3.3.0"
 
-"mobx-react@^7.2.0":
-  "integrity" "sha512-LZS99KFLn75VWDXPdRJhILzVQ7qLcRjQbzkK+wVs0Qg4kWw5hOI2USp7tmu+9zP9KYsVBmKyx2k/8cTTBfsymw=="
-  "resolved" "https://registry.npmjs.org/mobx-react/-/mobx-react-7.2.1.tgz"
-  "version" "7.2.1"
+"mobx-react@^7.3.0":
+  "integrity" "sha512-RGEcwZokopqyJE5JPwXKB9FWMSqFM9NJVO2QPI+z6laJTJeBHqvPicjnKgY5mvihxTeXB1+72TnooqUePeGV1g=="
+  "resolved" "https://registry.npmjs.org/mobx-react/-/mobx-react-7.3.0.tgz"
+  "version" "7.3.0"
   dependencies:
-    "mobx-react-lite" "^3.2.0"
+    "mobx-react-lite" "^3.3.0"
 
-"mobx@^6.1.0", "mobx@^6.3.3":
-  "integrity" "sha512-zDDKDhYUk9QCHQUdLG+wb4Jv/nXutSLt/P8kkwHyjdbrJO4OZS6QTEsrOnrKM39puqXSrJZHdB6+yRys2NBFFA=="
-  "resolved" "https://registry.npmjs.org/mobx/-/mobx-6.3.13.tgz"
-  "version" "6.3.13"
+"mobx@^6.1.0", "mobx@^6.4.2":
+  "integrity" "sha512-b4xQJYiH8sb0sEbfq/Ws3N77DEJtSihUFD1moeiz2jNoJ5B+mqJutt54ouO9iEfkp7Wk4jQDsVUOh7DPEW3wEw=="
+  "resolved" "https://registry.npmjs.org/mobx/-/mobx-6.4.2.tgz"
+  "version" "6.4.2"
 
 "move-concurrently@^1.0.1":
   "integrity" "sha1-viwAX9oy4LKa8fBdfEszIUxwH5I="
